@@ -73,5 +73,5 @@
 
 <!-- PIXEL WARP ANIMATION — Your Masterpiece SVG -->
 <div align="center">
-  <img src="./pixel-warp.svg" width="100%" alt="Warp drive pixel art"/>
+  <img src="[./pixel-warp.svg](https://raw.githubusercontent.com/bhattyuvraj22/bhattyuvraj22/main/pixel-warp.svg)" width="100%" alt="Warp drive pixel art"/>
 </div>
