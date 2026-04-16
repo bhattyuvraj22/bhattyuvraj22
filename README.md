@@ -1,11 +1,8 @@
 <div align="center">
 
-<!-- CAPSULE HEADER -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=6C63FF,a855f7&height=180&section=header&text=&animation=fadeIn" width="100%"/>
-
-<!-- ANIMATED TYPING NAME — Yuvraj Bhatt -->
+<!-- ANIMATED TYPING NAME — Yuvraj Bhatt (single line) -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&multiline=false&repeat=true&width=700&lines=Hey+%F0%9F%91%8B+I'm+Yuvraj+Bhatt;ML+%7C+GenAI+%7C+Cyber+%7C+Full+Stack;turning+coffee+%E2%86%92+code+%E2%86%92+chaos+%F0%9F%9A%80" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=32&duration=2500&pause=800&color=A855F7&center=true&vCenter=true&repeat=false&width=600&lines=Hey+%F0%9F%91%8B+I'm+Yuvraj+Bhatt" alt="Typing SVG"/>
 </a>
 
 <br/><br/>
@@ -55,20 +52,20 @@
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr>
     <td align="center" width="50%">
-      <!-- 🔁 REPLACE YOUR_USERNAME BELOW -->
-      <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&icon_color=ff6b9d&rank_icon=percentile&hide=prs,issues&include_all_commits=true&custom_title=∅" width="100%"/>
+     
+<img src="https://github-readme-stats.vercel.app/api?username=bhattyuvraj22&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&icon_color=ff6b9d&rank_icon=percentile&hide=prs,issues&include_all_commits=true&custom_title=∅" width="100%"/>
     </td>
     <td align="center" width="50%">
-      <!-- 🔁 REPLACE YOUR_USERNAME BELOW -->
-      <img src="https://github-readme-streak-stats.herokuapp.com?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0d0d1a&ring=a855f7&fire=ff6b9d&currStreakLabel=c084fc&sideLabels=6C63FF&dates=666" width="100%"/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com?user=bhattyuvraj22&theme=tokyonight&hide_border=true&background=0d0d1a&ring=a855f7&fire=ff6b9d&currStreakLabel=c084fc&sideLabels=6C63FF&dates=666" width="100%"/>
     </td>
   </tr>
 </table>
 
 <br/>
 
-<!-- 🔁 REPLACE YOUR_USERNAME BELOW -->
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&layout=compact&langs_count=8&hide=html,css" width="55%"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bhattyuvraj22&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&layout=compact&langs_count=8&hide=html,css" width="55%"/>
 
 </div>
 
