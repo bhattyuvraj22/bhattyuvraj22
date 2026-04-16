@@ -23,7 +23,7 @@
 <br/><br/>
 
 <!-- TERMINAL BIO — Pixel ASCII feel -->
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=4000&pause=1000&color=00FF60&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%3E+whoami;↳+breaking+things+so+prod+doesn't+have+to;↳+somewhere+between+overfitting+%26+enlightenment" alt="Terminal bio"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=4000&pause=1000&color=00FF60&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%3E+whoami;%E2%86%B3+breaking+things+so+prod+doesn%27t+have+to;%E2%86%B3+somewhere+between+overfitting+%26+enlightenment" alt="Terminal bio"/>
 
 </div>
 
