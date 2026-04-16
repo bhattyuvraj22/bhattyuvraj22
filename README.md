@@ -1,99 +1,91 @@
 <div align="center">
 
-<!-- INTRO HEADER -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=6C63FF&height=200&section=header&text=&animation=fadeIn" width="100%"/>
+<!-- CAPSULE HEADER -->
+<img src="https://capsule-render.vercel.app/api?type=venom&color=6C63FF,a855f7&height=180&section=header&text=&animation=fadeIn" width="100%"/>
 
-<!-- ANIMATED NAME BANNER -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=32&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=Hey+%F0%9F%91%8B%2C+I'm+%5BYOUR+NAME%5D;building+the+future%2C+one+commit+%E2%86%92" alt="Typing SVG" /></a>
+<!-- ANIMATED TYPING NAME -->
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&multiline=false&repeat=true&width=700&lines=Hey+%F0%9F%91%8B+I'm+%5BYOUR+NAME%5D;ML+%7C+GenAI+%7C+Cyber+%7C+Full+Stack;turning+coffee+%E2%86%92+code+%E2%86%92+chaos+%F0%9F%9A%80" alt="Typing SVG"/>
+</a>
+
+<br/><br/>
+
+<!-- HOBBIES BANNER SVG -->
+<img src="./hobbies-banner.svg" width="100%" alt="Basketball · Cricket · Dance"/>
+
+<br/><br/>
+
+<!-- DOMAIN PILLS -->
+<img src="https://img.shields.io/badge/⚡_Full_Stack-1a1a2e?style=flat-square&logo=react&logoColor=6C63FF&labelColor=1a1a2e&color=6C63FF"/>
+&nbsp;
+<img src="https://img.shields.io/badge/🤖_ML_/_GenAI-1a1a2e?style=flat-square&logo=pytorch&logoColor=ff6b9d&labelColor=1a1a2e&color=ff6b9d"/>
+&nbsp;
+<img src="https://img.shields.io/badge/🛡️_Cyber_Security-1a1a2e?style=flat-square&logo=hackthebox&logoColor=00ff60&labelColor=1a1a2e&color=00ff60"/>
+&nbsp;
+<img src="https://img.shields.io/badge/🧠_LLMs-1a1a2e?style=flat-square&logo=openai&logoColor=a855f7&labelColor=1a1a2e&color=a855f7"/>
+
+<br/><br/>
+
+<!-- TERMINAL BIO -->
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=4000&pause=1000&color=00FF60&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%3E+whoami;↳+breaking+things+so+prod+doesn't+have+to;↳+somewhere+between+overfitting+%26+enlightenment" alt="Terminal bio"/>
+
+</div>
+
+---
+
+<!-- SNAKE EATING CONTRIBUTIONS -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg">
+  <img alt="Snake eating contributions"
+    src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg"
+    width="100%"/>
+</picture>
+
+</div>
+
+---
+
+<!-- STATS — no headers, pixel dark theme -->
+<div align="center">
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&icon_color=ff6b9d&rank_icon=percentile&hide=prs,issues&include_all_commits=true&custom_title=∅" width="100%"/>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github-readme-streak-stats.herokuapp.com?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0d0d1a&ring=a855f7&fire=ff6b9d&currStreakLabel=c084fc&sideLabels=6C63FF&dates=666" width="100%"/>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
-<!-- HOBBIES BANNER (your existing SVG) -->
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&layout=compact&langs_count=8&hide=html,css,scss" width="55%"/>
+
+<br/>
+
+<!-- SNAKE AGAIN BELOW STATS -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./hobbies-banner.svg">
-  <img src="./hobbies-banner.svg" width="100%" alt="Basketball · Cricket · Dance"/>
-</picture>
-
-<br/><br/>
-
-<!-- BIO PILLS — dev/ml/cyber/genai flavour, no boring tags -->
-<img src="https://img.shields.io/badge/⚡_Full_Stack_Dev-0D1117?style=for-the-badge&logo=visualstudiocode&logoColor=6C63FF&labelColor=0D1117&color=6C63FF" />
-<img src="https://img.shields.io/badge/🤖_ML_Engineer-0D1117?style=for-the-badge&logo=pytorch&logoColor=ff6b9d&labelColor=0D1117&color=ff6b9d" />
-<img src="https://img.shields.io/badge/🛡️_Cyber_Curious-0D1117?style=for-the-badge&logo=hackthebox&logoColor=00ff60&labelColor=0D1117&color=00ff60" />
-<img src="https://img.shields.io/badge/🧠_GenAI_Builder-0D1117?style=for-the-badge&logo=openai&logoColor=a855f7&labelColor=0D1117&color=a855f7" />
-
-<br/><br/>
-
-<!-- ONE-LINER BIO — custom SVG pixel terminal -->
-
-```
-> whoami
-  ↳  turning coffee → code → models → chaos → repeat
-  ↳  breaking things so you don't have to
-  ↳  somewhere between overfitting and enlightenment
-```
-
-</div>
-
----
-
-<!-- ═══════════════════════════════════════════════
-     CONTRIBUTION GRAPH → SNAKE EATS IT
-═══════════════════════════════════════════════ -->
-
-<div align="center">
-
-### 
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg">
-  <img alt="Snake eating contributions" src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg">
+  <img alt="Snake eating contributions"
+    src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake.svg"
+    width="100%"/>
 </picture>
 
 </div>
 
 ---
 
-<!-- ═══════════════════════════════════════════════
-     STATS — no boring header, pixel-mechanical theme
-═══════════════════════════════════════════════ -->
-
+<!-- PIXEL WARP BOTTOM ANIMATION -->
 <div align="center">
-
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td align="center" width="50%">
-
-<!-- GitHub Stats card — dark compact -->
-<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&icon_color=ff6b9d&rank_icon=github&hide=prs,issues&custom_title=∅" width="100%"/>
-
-</td>
-<td align="center" width="50%">
-
-<!-- Streak stats -->
-<img src="https://github-readme-streak-stats.herokuapp.com?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0d0d1a&ring=a855f7&fire=ff6b9d&currStreakLabel=c084fc&sideLabels=6C63FF" width="100%"/>
-
-</td>
-</tr>
-</table>
-
-<!-- Most used languages — compact pixel grid -->
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&theme=tokyonight&hide_border=true&bg_color=0d0d1a&title_color=a855f7&text_color=c084fc&layout=compact&hide=html,css&langs_count=8" width="60%"/>
-
-</div>
-
----
-
-<!-- ═══════════════════════════════════════════════
-     OFF-SCREEN — COMBINED PIXEL ART ANIMATION
-     New animation: pixel ship + warp + scan grid
-═══════════════════════════════════════════════ -->
-
-<div align="center">
-
-<picture>
-  <img src="./pixel-warp.svg" width="100%" alt="Pixel warp animation"/>
-</picture>
-
+  <img src="./pixel-warp.svg" width="100%" alt="Warp drive"/>
 </div>
