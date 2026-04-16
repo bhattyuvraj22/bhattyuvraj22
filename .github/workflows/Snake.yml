@@ -2,16 +2,17 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+    - cron: "0 */12 * * *"   # runs every 12 hours
+  workflow_dispatch:           # allows manual trigger
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
+    permissions:
+      contents: write          # ← THIS fixes the 403 error
+
     steps:
       - name: Generate snake SVG
         uses: Platane/snk/svg-only@v3
