@@ -1,0 +1,441 @@
+<svg width="900" height="120" viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="spacefog" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0a0018"/>
+      <stop offset="100%" stop-color="#020008"/>
+    </radialGradient>
+
+    <!-- Scanline grid -->
+    <pattern id="pgrid" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="1" fill="#a855f7" opacity="0.04"/>
+    </pattern>
+
+    <!-- Warp streak gradient -->
+    <linearGradient id="warp1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6C63FF" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#a855f7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff6b9d" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="warp2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff60" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#5dffaa" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00ff60" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="warp3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff9e4a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ff6b9d" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Pixel glow filter -->
+    <filter id="px-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="px-glow-hot" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <style>
+      /* ── WARP STREAKS ── */
+      .streak { stroke-linecap: round; }
+      .s1  { animation: warp-s 2.4s linear infinite 0.0s; }
+      .s2  { animation: warp-s 2.4s linear infinite 0.18s; }
+      .s3  { animation: warp-s 2.4s linear infinite 0.36s; }
+      .s4  { animation: warp-s 2.4s linear infinite 0.54s; }
+      .s5  { animation: warp-s 2.4s linear infinite 0.72s; }
+      .s6  { animation: warp-s 2.4s linear infinite 0.90s; }
+      .s7  { animation: warp-s 2.4s linear infinite 1.08s; }
+      .s8  { animation: warp-s 2.4s linear infinite 1.26s; }
+      .s9  { animation: warp-s 2.4s linear infinite 1.44s; }
+      .s10 { animation: warp-s 2.4s linear infinite 1.62s; }
+      .s11 { animation: warp-s 2.4s linear infinite 1.80s; }
+      .s12 { animation: warp-s 2.4s linear infinite 1.98s; }
+      .s13 { animation: warp-s 2.4s linear infinite 2.16s; }
+      @keyframes warp-s {
+        0%   { transform: translateX(-960px); opacity: 0; }
+        5%   { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { transform: translateX(960px); opacity: 0; }
+      }
+
+      /* ── PIXEL SHIP ── */
+      .ship { animation: ship-move 6s ease-in-out infinite; }
+      @keyframes ship-move {
+        0%   { transform: translate(0px, 0px); }
+        15%  { transform: translate(6px, -4px); }
+        35%  { transform: translate(12px, 2px); }
+        50%  { transform: translate(8px, -2px); }
+        70%  { transform: translate(-4px, 3px); }
+        85%  { transform: translate(-8px, -1px); }
+        100% { transform: translate(0px, 0px); }
+      }
+      .engine-l { animation: eng-l 0.25s steps(2) infinite; }
+      .engine-r { animation: eng-r 0.25s steps(2) infinite 0.12s; }
+      @keyframes eng-l {
+        0%  { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+      @keyframes eng-r {
+        0%  { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      .thruster { animation: thrust 0.18s steps(3) infinite; }
+      @keyframes thrust {
+        0%   { transform: scaleX(1) scaleY(1); }
+        33%  { transform: scaleX(1.4) scaleY(0.7); }
+        66%  { transform: scaleX(0.8) scaleY(1.3); }
+        100% { transform: scaleX(1) scaleY(1); }
+      }
+
+      /* ── PIXEL STARS ── */
+      .px-star { animation: px-twink 3s ease-in-out infinite; }
+      .px-star:nth-child(2n+1) { animation-delay: 0.7s; animation-duration: 2.1s; }
+      .px-star:nth-child(3n+1) { animation-delay: 1.4s; animation-duration: 2.8s; }
+      @keyframes px-twink {
+        0%,100% { opacity: 0.15; }
+        50%     { opacity: 1; }
+      }
+
+      /* ── SCAN LINE ── */
+      .scan { animation: scan-move 3s linear infinite; }
+      @keyframes scan-move {
+        0%   { transform: translateY(0); opacity: 0; }
+        5%   { opacity: 0.3; }
+        90%  { opacity: 0.2; }
+        100% { transform: translateY(120px); opacity: 0; }
+      }
+
+      /* ── BINARY RAIN ── */
+      .bit1 { animation: bit-fall 4s linear infinite 0s; }
+      .bit2 { animation: bit-fall 4s linear infinite 0.8s; }
+      .bit3 { animation: bit-fall 4s linear infinite 1.6s; }
+      .bit4 { animation: bit-fall 4s linear infinite 2.4s; }
+      .bit5 { animation: bit-fall 4s linear infinite 3.2s; }
+      @keyframes bit-fall {
+        0%   { transform: translateY(-20px); opacity: 0; }
+        10%  { opacity: 0.5; }
+        80%  { opacity: 0.3; }
+        100% { transform: translateY(130px); opacity: 0; }
+      }
+
+      /* ── PIXEL HUD ELEMENTS ── */
+      .hud-blink { animation: hud-b 1.1s steps(2) infinite; }
+      @keyframes hud-b { 0%{opacity:1} 50%{opacity:0.2} }
+      .hud-pulse { animation: hud-p 2s ease-in-out infinite; }
+      @keyframes hud-p { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+      /* corner bracket pulse */
+      .brk { animation: brk-p 2.5s ease-in-out infinite; }
+      @keyframes brk-p { 0%,100%{opacity:0.5} 50%{opacity:1} }
+
+      /* pixel wave at bottom */
+      .px-wave { animation: px-w 1s steps(6) infinite; }
+      @keyframes px-w {
+        0%  { transform: translateY(0px); }
+        16% { transform: translateY(-2px); }
+        33% { transform: translateY(-4px); }
+        50% { transform: translateY(-2px); }
+        66% { transform: translateY(0px); }
+        83% { transform: translateY(2px); }
+        100%{ transform: translateY(0px); }
+      }
+
+      /* orbit dot */
+      .orbit-dot { animation: orb 4s linear infinite; transform-origin: 450px 60px; }
+      @keyframes orb { to { transform: rotate(360deg); } }
+
+      /* matrix chars cycle */
+      .mx { animation: mx-fade 2s steps(8) infinite; font-family: 'Courier New', monospace; font-size: 7px; }
+      .mx:nth-child(2n) { animation-delay: 0.25s; }
+      .mx:nth-child(3n) { animation-delay: 0.5s; }
+      @keyframes mx-fade {
+        0%  { opacity: 0.7; }
+        25% { opacity: 0.2; }
+        50% { opacity: 0.9; }
+        75% { opacity: 0.1; }
+        100%{ opacity: 0.7; }
+      }
+    </style>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="900" height="120" fill="url(#spacefog)"/>
+  <rect width="900" height="120" fill="url(#pgrid)"/>
+
+  <!-- ── SCAN LINE ── -->
+  <rect class="scan" x="0" y="0" width="900" height="2" fill="#a855f7" opacity="0.3"/>
+
+  <!-- ── WARP STREAKS (horizontal, speed-of-light feel) ── -->
+  <!-- Purple cluster -->
+  <line class="streak s1"  x1="0" y1="22"  x2="220" y2="22"  stroke="url(#warp1)" stroke-width="1.5"/>
+  <line class="streak s2"  x1="0" y1="38"  x2="180" y2="38"  stroke="url(#warp1)" stroke-width="1"/>
+  <line class="streak s3"  x1="0" y1="55"  x2="240" y2="55"  stroke="url(#warp1)" stroke-width="2"/>
+  <line class="streak s4"  x1="0" y1="70"  x2="160" y2="70"  stroke="url(#warp1)" stroke-width="1"/>
+  <line class="streak s5"  x1="0" y1="88"  x2="200" y2="88"  stroke="url(#warp1)" stroke-width="1.5"/>
+  <!-- Green cluster -->
+  <line class="streak s6"  x1="0" y1="14"  x2="140" y2="14"  stroke="url(#warp2)" stroke-width="1"/>
+  <line class="streak s7"  x1="0" y1="45"  x2="190" y2="45"  stroke="url(#warp2)" stroke-width="1.5"/>
+  <line class="streak s8"  x1="0" y1="62"  x2="150" y2="62"  stroke="url(#warp2)" stroke-width="1"/>
+  <line class="streak s9"  x1="0" y1="97"  x2="170" y2="97"  stroke="url(#warp2)" stroke-width="1"/>
+  <!-- Orange cluster -->
+  <line class="streak s10" x1="0" y1="30"  x2="210" y2="30"  stroke="url(#warp3)" stroke-width="1.5"/>
+  <line class="streak s11" x1="0" y1="50"  x2="130" y2="50"  stroke="url(#warp3)" stroke-width="1"/>
+  <line class="streak s12" x1="0" y1="78"  x2="200" y2="78"  stroke="url(#warp3)" stroke-width="2"/>
+  <line class="streak s13" x1="0" y1="106" x2="160" y2="106" stroke="url(#warp3)" stroke-width="1"/>
+
+  <!-- ── PIXEL STARS (static twinkle) ── -->
+  <rect class="px-star" x="30"  y="10"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="80"  y="45"  width="2" height="2" fill="#c084fc"/>
+  <rect class="px-star" x="140" y="20"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="200" y="70"  width="2" height="2" fill="#5dffaa"/>
+  <rect class="px-star" x="280" y="15"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="350" y="95"  width="2" height="2" fill="#c084fc"/>
+  <rect class="px-star" x="400" y="30"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="490" y="80"  width="2" height="2" fill="#5dffaa"/>
+  <rect class="px-star" x="560" y="12"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="620" y="55"  width="2" height="2" fill="#c084fc"/>
+  <rect class="px-star" x="700" y="28"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="780" y="75"  width="2" height="2" fill="#5dffaa"/>
+  <rect class="px-star" x="840" y="18"  width="2" height="2" fill="#ffffff"/>
+  <rect class="px-star" x="880" y="90"  width="2" height="2" fill="#c084fc"/>
+  <!-- 1px micro-stars -->
+  <rect class="px-star" x="55"  y="88"  width="1" height="1" fill="#adf"/>
+  <rect class="px-star" x="118" y="60"  width="1" height="1" fill="#fff"/>
+  <rect class="px-star" x="320" y="40"  width="1" height="1" fill="#fff"/>
+  <rect class="px-star" x="440" y="108" width="1" height="1" fill="#adf"/>
+  <rect class="px-star" x="650" y="90"  width="1" height="1" fill="#fff"/>
+  <rect class="px-star" x="810" y="48"  width="1" height="1" fill="#adf"/>
+
+  <!-- ── BINARY RAIN (left side) ── -->
+  <text class="bit1 mx" x="18" y="20"  fill="#00ff60">1</text>
+  <text class="bit2 mx" x="18" y="30"  fill="#00ff60">0</text>
+  <text class="bit3 mx" x="18" y="40"  fill="#5dffaa">1</text>
+  <text class="bit4 mx" x="18" y="50"  fill="#00ff60">0</text>
+  <text class="bit5 mx" x="18" y="60"  fill="#00ff60">1</text>
+  <text class="bit1 mx" x="26" y="25"  fill="#5dffaa">0</text>
+  <text class="bit3 mx" x="26" y="45"  fill="#00ff60">1</text>
+  <text class="bit5 mx" x="26" y="65"  fill="#5dffaa">0</text>
+
+  <!-- Binary rain right side -->
+  <text class="bit2 mx" x="866" y="20"  fill="#a855f7">0</text>
+  <text class="bit4 mx" x="866" y="40"  fill="#c084fc">1</text>
+  <text class="bit1 mx" x="866" y="60"  fill="#a855f7">0</text>
+  <text class="bit3 mx" x="874" y="30"  fill="#c084fc">1</text>
+  <text class="bit5 mx" x="874" y="55"  fill="#a855f7">0</text>
+  <text class="bit2 mx" x="874" y="80"  fill="#c084fc">1</text>
+
+  <!-- ── PIXEL SPACESHIP (center, floating) ── -->
+  <g class="ship" style="transform-origin: 450px 58px;" filter="url(#px-glow)">
+
+    <!-- Engine glow left -->
+    <g class="engine-l" style="transform-origin: 418px 66px;">
+      <rect x="408" y="62" width="10" height="8" fill="#ff6b9d" opacity="0.5"/>
+      <rect x="405" y="64" width="5"  height="4" fill="#ff9e4a" opacity="0.6"/>
+    </g>
+    <!-- Engine glow right -->
+    <g class="engine-r" style="transform-origin: 482px 66px;">
+      <rect x="482" y="62" width="10" height="8" fill="#ff6b9d" opacity="0.5"/>
+      <rect x="490" y="64" width="5"  height="4" fill="#ff9e4a" opacity="0.6"/>
+    </g>
+
+    <!-- Thruster flame left -->
+    <g class="thruster" style="transform-origin: 412px 70px;">
+      <rect x="406" y="70" width="4" height="6"  fill="#ff9e4a"/>
+      <rect x="408" y="76" width="2" height="4"  fill="#ffd700"/>
+      <rect x="404" y="72" width="2" height="3"  fill="#ff6b9d" opacity="0.8"/>
+    </g>
+    <!-- Thruster flame right -->
+    <g class="thruster" style="transform-origin: 488px 70px;">
+      <rect x="488" y="70" width="4" height="6"  fill="#ff9e4a"/>
+      <rect x="490" y="76" width="2" height="4"  fill="#ffd700"/>
+      <rect x="492" y="72" width="2" height="3"  fill="#ff6b9d" opacity="0.8"/>
+    </g>
+
+    <!-- SHIP BODY (pixel art, 8px grid) -->
+    <!-- Main hull -->
+    <rect x="420" y="44" width="60" height="28" rx="2" fill="#1a0840"/>
+    <!-- Hull highlight top -->
+    <rect x="422" y="44" width="56" height="4"  fill="#6C63FF" opacity="0.6"/>
+    <!-- Hull highlight bottom -->
+    <rect x="422" y="64" width="56" height="4"  fill="#3d2080" opacity="0.5"/>
+
+    <!-- Cockpit dome -->
+    <rect x="438" y="36" width="24" height="12" rx="2" fill="#a855f7"/>
+    <rect x="440" y="38" width="8"  height="6"  fill="#e2c4ff" opacity="0.9"/>
+    <rect x="452" y="38" width="8"  height="6"  fill="#c084fc" opacity="0.7"/>
+
+    <!-- Wing left -->
+    <rect x="406" y="52" width="16" height="20" rx="1" fill="#2a0e60"/>
+    <rect x="408" y="54" width="8"  height="4"  fill="#6C63FF" opacity="0.4"/>
+    <!-- Wing right -->
+    <rect x="478" y="52" width="16" height="20" rx="1" fill="#2a0e60"/>
+    <rect x="482" y="54" width="8"  height="4"  fill="#6C63FF" opacity="0.4"/>
+
+    <!-- Engine nacelle left -->
+    <rect x="408" y="60" width="14" height="12" rx="1" fill="#0d0420"/>
+    <rect x="410" y="62" width="10" height="8"  fill="#3d1880"/>
+    <!-- Engine nacelle right -->
+    <rect x="478" y="60" width="14" height="12" rx="1" fill="#0d0420"/>
+    <rect x="480" y="62" width="10" height="8"  fill="#3d1880"/>
+
+    <!-- Pixel detail lines on hull -->
+    <rect x="426" y="50" width="48" height="1" fill="#6C63FF" opacity="0.3"/>
+    <rect x="426" y="58" width="48" height="1" fill="#6C63FF" opacity="0.3"/>
+
+    <!-- Gun port left -->
+    <rect x="416" y="54" width="6" height="2" fill="#ff6b9d"/>
+    <!-- Gun port right -->
+    <rect x="478" y="54" width="6" height="2" fill="#ff6b9d"/>
+
+    <!-- Status LEDs -->
+    <rect class="hud-blink" x="424" y="53" width="2" height="2" fill="#00ff60"/>
+    <rect class="hud-blink" x="472" y="53" width="2" height="2" fill="#ff6b9d"/>
+    <rect class="hud-pulse" x="448" y="47" width="4" height="4" rx="1" fill="#ffd700"/>
+
+    <!-- Sensor dish -->
+    <rect x="460" y="38" width="2" height="6" fill="#c084fc" opacity="0.8"/>
+    <rect x="457" y="36" width="8" height="2" fill="#a855f7" opacity="0.9"/>
+  </g>
+
+  <!-- ── ORBIT DOT around ship ── -->
+  <g class="orbit-dot">
+    <rect x="450" y="28" width="3" height="3" fill="#5dffaa" opacity="0.8" filter="url(#px-glow)"/>
+  </g>
+
+  <!-- ── HUD BRACKETS (corner decorations) ── -->
+  <!-- Top-left -->
+  <path class="brk" d="M4,16 L4,4 L16,4"   fill="none" stroke="#6C63FF" stroke-width="1.5" stroke-linecap="square"/>
+  <!-- Top-right -->
+  <path class="brk" d="M884,4 L896,4 L896,16" fill="none" stroke="#6C63FF" stroke-width="1.5" stroke-linecap="square"/>
+  <!-- Bottom-left -->
+  <path class="brk" d="M4,104 L4,116 L16,116" fill="none" stroke="#6C63FF" stroke-width="1.5" stroke-linecap="square"/>
+  <!-- Bottom-right -->
+  <path class="brk" d="M884,116 L896,116 L896,104" fill="none" stroke="#6C63FF" stroke-width="1.5" stroke-linecap="square"/>
+
+  <!-- ── HUD TEXT LABELS (pixel-style status readouts) ── -->
+  <text x="22" y="9" font-family="'Courier New',monospace" font-size="7px" fill="#6C63FF" opacity="0.7" font-weight="700">SYS::ONLINE</text>
+  <text x="820" y="9" font-family="'Courier New',monospace" font-size="7px" fill="#00ff60" opacity="0.7" font-weight="700" text-anchor="end">PWR::████░</text>
+
+  <!-- ── PIXEL WAVE BAR (bottom) ── -->
+  <g style="transform-origin: 450px 112px;">
+    <!-- 45 pixel blocks forming an animated wave -->
+    <rect class="px-wave" style="animation-delay:0.00s; transform-origin:10px 112px"  x="8"   y="108" width="4" height="4" fill="#6C63FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.05s; transform-origin:18px 112px"  x="16"  y="108" width="4" height="4" fill="#7B72FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.10s; transform-origin:26px 112px"  x="24"  y="108" width="4" height="4" fill="#8C84FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.15s; transform-origin:34px 112px"  x="32"  y="108" width="4" height="4" fill="#9E96FF" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:0.20s; transform-origin:42px 112px"  x="40"  y="108" width="4" height="4" fill="#a855f7" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.25s; transform-origin:50px 112px"  x="48"  y="108" width="4" height="4" fill="#b264f8" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.30s; transform-origin:58px 112px"  x="56"  y="108" width="4" height="4" fill="#bc72f9" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.35s; transform-origin:66px 112px"  x="64"  y="108" width="4" height="4" fill="#c681fa" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.40s; transform-origin:74px 112px"  x="72"  y="108" width="4" height="4" fill="#cf8efb" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.45s; transform-origin:82px 112px"  x="80"  y="108" width="4" height="4" fill="#d89cfc" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.50s; transform-origin:90px 112px"  x="88"  y="108" width="4" height="4" fill="#e0aafe" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.55s; transform-origin:98px 112px"  x="96"  y="108" width="4" height="4" fill="#e8b8ff" opacity="0.95"/>
+    <rect class="px-wave" style="animation-delay:0.60s; transform-origin:106px 112px" x="104" y="108" width="4" height="4" fill="#efbfff" opacity="0.95"/>
+    <rect class="px-wave" style="animation-delay:0.65s; transform-origin:114px 112px" x="112" y="108" width="4" height="4" fill="#f3c5ff" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:0.70s; transform-origin:122px 112px" x="120" y="108" width="4" height="4" fill="#f6c8ff" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:0.75s; transform-origin:130px 112px" x="128" y="108" width="4" height="4" fill="#ff6b9d" opacity="0.95"/>
+    <rect class="px-wave" style="animation-delay:0.80s; transform-origin:138px 112px" x="136" y="108" width="4" height="4" fill="#ff7ba8" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.85s; transform-origin:146px 112px" x="144" y="108" width="4" height="4" fill="#ff8cb3" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.90s; transform-origin:154px 112px" x="152" y="108" width="4" height="4" fill="#ff9ebe" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.95s; transform-origin:162px 112px" x="160" y="108" width="4" height="4" fill="#ffa8c8" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:1.00s; transform-origin:170px 112px" x="168" y="108" width="4" height="4" fill="#ff9e4a" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.05s; transform-origin:178px 112px" x="176" y="108" width="4" height="4" fill="#ffa83d" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.10s; transform-origin:186px 112px" x="184" y="108" width="4" height="4" fill="#ffb232" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.15s; transform-origin:194px 112px" x="192" y="108" width="4" height="4" fill="#ffbb28" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.20s; transform-origin:202px 112px" x="200" y="108" width="4" height="4" fill="#ffc220" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.25s; transform-origin:210px 112px" x="208" y="108" width="4" height="4" fill="#ffd700" opacity="0.9"/>
+    <!-- center peak — teal -->
+    <rect class="px-wave" style="animation-delay:1.30s; transform-origin:218px 112px" x="216" y="108" width="4" height="4" fill="#5dffaa" opacity="0.95"/>
+    <rect class="px-wave" style="animation-delay:1.35s; transform-origin:226px 112px" x="224" y="108" width="4" height="4" fill="#5dffaa" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.40s; transform-origin:234px 112px" x="232" y="108" width="4" height="4" fill="#5dffaa" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.45s; transform-origin:242px 112px" x="240" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.50s; transform-origin:250px 112px" x="248" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.55s; transform-origin:258px 112px" x="256" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.50s; transform-origin:266px 112px" x="264" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.45s; transform-origin:274px 112px" x="272" y="108" width="4" height="4" fill="#5dffaa" opacity="1"/>
+    <!-- mirrored right half -->
+    <rect class="px-wave" style="animation-delay:1.40s; transform-origin:282px 112px" x="280" y="108" width="4" height="4" fill="#5dffaa" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.35s; transform-origin:290px 112px" x="288" y="108" width="4" height="4" fill="#ffd700" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.30s; transform-origin:298px 112px" x="296" y="108" width="4" height="4" fill="#ffc220" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.25s; transform-origin:306px 112px" x="304" y="108" width="4" height="4" fill="#ffb232" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.20s; transform-origin:314px 112px" x="312" y="108" width="4" height="4" fill="#ff9e4a" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.15s; transform-origin:322px 112px" x="320" y="108" width="4" height="4" fill="#ffa8c8" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:1.10s; transform-origin:330px 112px" x="328" y="108" width="4" height="4" fill="#ff9ebe" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.05s; transform-origin:338px 112px" x="336" y="108" width="4" height="4" fill="#ff6b9d" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.00s; transform-origin:346px 112px" x="344" y="108" width="4" height="4" fill="#e8b8ff" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.95s; transform-origin:354px 112px" x="352" y="108" width="4" height="4" fill="#d89cfc" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.90s; transform-origin:362px 112px" x="360" y="108" width="4" height="4" fill="#c681fa" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.85s; transform-origin:370px 112px" x="368" y="108" width="4" height="4" fill="#bc72f9" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.80s; transform-origin:378px 112px" x="376" y="108" width="4" height="4" fill="#b264f8" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.75s; transform-origin:386px 112px" x="384" y="108" width="4" height="4" fill="#a855f7" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.70s; transform-origin:394px 112px" x="392" y="108" width="4" height="4" fill="#9E96FF" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:0.65s; transform-origin:402px 112px" x="400" y="108" width="4" height="4" fill="#8C84FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.60s; transform-origin:410px 112px" x="408" y="108" width="4" height="4" fill="#7B72FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.55s; transform-origin:418px 112px" x="416" y="108" width="4" height="4" fill="#6C63FF" opacity="0.7"/>
+
+    <!-- second half of wave (right of center, symmetric) -->
+    <rect class="px-wave" style="animation-delay:0.50s; transform-origin:466px 112px" x="464" y="108" width="4" height="4" fill="#6C63FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.55s; transform-origin:474px 112px" x="472" y="108" width="4" height="4" fill="#7B72FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.60s; transform-origin:482px 112px" x="480" y="108" width="4" height="4" fill="#8C84FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.65s; transform-origin:490px 112px" x="488" y="108" width="4" height="4" fill="#9E96FF" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:0.70s; transform-origin:498px 112px" x="496" y="108" width="4" height="4" fill="#a855f7" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.75s; transform-origin:506px 112px" x="504" y="108" width="4" height="4" fill="#b264f8" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.80s; transform-origin:514px 112px" x="512" y="108" width="4" height="4" fill="#bc72f9" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.85s; transform-origin:522px 112px" x="520" y="108" width="4" height="4" fill="#c681fa" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.90s; transform-origin:530px 112px" x="528" y="108" width="4" height="4" fill="#d89cfc" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:0.95s; transform-origin:538px 112px" x="536" y="108" width="4" height="4" fill="#e8b8ff" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.00s; transform-origin:546px 112px" x="544" y="108" width="4" height="4" fill="#ff6b9d" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.05s; transform-origin:554px 112px" x="552" y="108" width="4" height="4" fill="#ff9ebe" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.10s; transform-origin:562px 112px" x="560" y="108" width="4" height="4" fill="#ffa8c8" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:1.15s; transform-origin:570px 112px" x="568" y="108" width="4" height="4" fill="#ff9e4a" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.20s; transform-origin:578px 112px" x="576" y="108" width="4" height="4" fill="#ffb232" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.25s; transform-origin:586px 112px" x="584" y="108" width="4" height="4" fill="#ffc220" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.30s; transform-origin:594px 112px" x="592" y="108" width="4" height="4" fill="#ffd700" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.35s; transform-origin:602px 112px" x="600" y="108" width="4" height="4" fill="#5dffaa" opacity="0.95"/>
+    <rect class="px-wave" style="animation-delay:1.40s; transform-origin:610px 112px" x="608" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.45s; transform-origin:618px 112px" x="616" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.50s; transform-origin:626px 112px" x="624" y="108" width="4" height="4" fill="#00ff60" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.45s; transform-origin:634px 112px" x="632" y="108" width="4" height="4" fill="#5dffaa" opacity="1"/>
+    <rect class="px-wave" style="animation-delay:1.40s; transform-origin:642px 112px" x="640" y="108" width="4" height="4" fill="#5dffaa" opacity="0.95"/>
+    <rect class="px-wave" style="animation-delay:1.35s; transform-origin:650px 112px" x="648" y="108" width="4" height="4" fill="#ffd700" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.30s; transform-origin:658px 112px" x="656" y="108" width="4" height="4" fill="#ffc220" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.25s; transform-origin:666px 112px" x="664" y="108" width="4" height="4" fill="#ffb232" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.20s; transform-origin:674px 112px" x="672" y="108" width="4" height="4" fill="#ff9e4a" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:1.15s; transform-origin:682px 112px" x="680" y="108" width="4" height="4" fill="#ff6b9d" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:1.10s; transform-origin:690px 112px" x="688" y="108" width="4" height="4" fill="#e8b8ff" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.05s; transform-origin:698px 112px" x="696" y="108" width="4" height="4" fill="#d89cfc" opacity="0.9"/>
+    <rect class="px-wave" style="animation-delay:1.00s; transform-origin:706px 112px" x="704" y="108" width="4" height="4" fill="#c681fa" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.95s; transform-origin:714px 112px" x="712" y="108" width="4" height="4" fill="#bc72f9" opacity="0.85"/>
+    <rect class="px-wave" style="animation-delay:0.90s; transform-origin:722px 112px" x="720" y="108" width="4" height="4" fill="#b264f8" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.85s; transform-origin:730px 112px" x="728" y="108" width="4" height="4" fill="#a855f7" opacity="0.8"/>
+    <rect class="px-wave" style="animation-delay:0.80s; transform-origin:738px 112px" x="736" y="108" width="4" height="4" fill="#9E96FF" opacity="0.75"/>
+    <rect class="px-wave" style="animation-delay:0.75s; transform-origin:746px 112px" x="744" y="108" width="4" height="4" fill="#8C84FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.70s; transform-origin:754px 112px" x="752" y="108" width="4" height="4" fill="#7B72FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.65s; transform-origin:762px 112px" x="760" y="108" width="4" height="4" fill="#6C63FF" opacity="0.7"/>
+    <rect class="px-wave" style="animation-delay:0.60s; transform-origin:770px 112px" x="768" y="108" width="4" height="4" fill="#6C63FF" opacity="0.65"/>
+    <rect class="px-wave" style="animation-delay:0.55s; transform-origin:778px 112px" x="776" y="108" width="4" height="4" fill="#6C63FF" opacity="0.6"/>
+    <rect class="px-wave" style="animation-delay:0.50s; transform-origin:786px 112px" x="784" y="108" width="4" height="4" fill="#6C63FF" opacity="0.55"/>
+    <rect class="px-wave" style="animation-delay:0.45s; transform-origin:794px 112px" x="792" y="108" width="4" height="4" fill="#5558CC" opacity="0.55"/>
+    <rect class="px-wave" style="animation-delay:0.40s; transform-origin:802px 112px" x="800" y="108" width="4" height="4" fill="#4a4cb8" opacity="0.5"/>
+    <rect class="px-wave" style="animation-delay:0.35s; transform-origin:810px 112px" x="808" y="108" width="4" height="4" fill="#3f40a4" opacity="0.5"/>
+    <rect class="px-wave" style="animation-delay:0.30s; transform-origin:818px 112px" x="816" y="108" width="4" height="4" fill="#343490" opacity="0.45"/>
+    <rect class="px-wave" style="animation-delay:0.25s; transform-origin:826px 112px" x="824" y="108" width="4" height="4" fill="#29287c" opacity="0.45"/>
+    <rect class="px-wave" style="animation-delay:0.20s; transform-origin:834px 112px" x="832" y="108" width="4" height="4" fill="#1e1c68" opacity="0.4"/>
+    <rect class="px-wave" style="animation-delay:0.15s; transform-origin:842px 112px" x="840" y="108" width="4" height="4" fill="#131054" opacity="0.4"/>
+    <rect class="px-wave" style="animation-delay:0.10s; transform-origin:850px 112px" x="848" y="108" width="4" height="4" fill="#0a0840" opacity="0.35"/>
+    <rect class="px-wave" style="animation-delay:0.05s; transform-origin:858px 112px" x="856" y="108" width="4" height="4" fill="#060430" opacity="0.3"/>
+    <rect class="px-wave" style="animation-delay:0.00s; transform-origin:866px 112px" x="864" y="108" width="4" height="4" fill="#030220" opacity="0.25"/>
+    <rect class="px-wave" style="animation-delay:0.00s; transform-origin:874px 112px" x="872" y="108" width="4" height="4" fill="#010110" opacity="0.2"/>
+    <rect class="px-wave" style="animation-delay:0.00s; transform-origin:882px 112px" x="880" y="108" width="4" height="4" fill="#010110" opacity="0.15"/>
+    <rect class="px-wave" style="animation-delay:0.00s; transform-origin:890px 112px" x="888" y="108" width="4" height="4" fill="#010110" opacity="0.1"/>
+  </g>
+
+  <!-- ── STATUS TEXT center ── -->
+  <text x="450" y="104" text-anchor="middle" font-family="'Courier New',monospace" font-size="7px" fill="#a855f7" opacity="0.5" font-weight="700">· · · WARP DRIVE ENGAGED · · ·</text>
+
+  <!-- outer border -->
+  <rect x="1" y="1" width="898" height="118" rx="8" fill="none" stroke="#6C63FF" stroke-width="0.5" opacity="0.4"/>
+</svg>
